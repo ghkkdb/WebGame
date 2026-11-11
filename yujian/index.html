@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#102321">
+  <title>御剑十分钟 · 听雨山庄</title>
+  <style>/* STYLE */</style>
+</head>
+<body>
+  <canvas id="world" aria-label="听雨山庄三维游戏场景"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div id="boot"><span class="seal">剑</span><p>山雨欲来，江湖将醒</p><small>正在布置听雨山庄…</small></div>
+  <main id="home" class="screen hidden">
+    <header class="home-header"><span>听 雨 山 庄</span><span>一卷江湖 · 第一回</span><button class="quiet sound-toggle" aria-label="切换声音">声 音 开</button></header>
+    <section class="intro"><div class="eyebrow"><i></i> 武侠生存 · 随机武学</div><h1>御剑<span>十分钟</span></h1><p class="poem">一夜听雨，一剑入江湖。</p><p class="premise">论武大会，风云骤变。携一页《归元录》，<br>在十分钟的围杀中，悟出属于你的绝学。</p><div class="intro-notes"><span>三位侠客</span><b>／</b><span>六路绝学</span><b>／</b><span>一场突围</span></div><button id="guide-open" class="text-btn">初入江湖 · 查看玩法 <span>↗</span></button></section>
+    <section class="selection"><div class="section-label">择一人，入江湖 <small>SELECT YOUR WANDERER</small></div><div id="hero-list" role="group" aria-label="选择侠客"></div><div id="hero-detail"></div><button id="start" class="primary">执剑入局 <span>启程 →</span></button><p class="home-hint">单局上限十分钟 · 离线可玩 · 自动出招</p></section>
+    <footer class="home-footer"><span>雨夜 · 初秋 · 亥时</span><span id="record">初入江湖，尚无战绩</span><span>卷一 / 听雨</span></footer>
+  </main>
+  <section id="hud" class="hidden" aria-label="游戏信息">
+    <div class="hero-hud"><div class="portrait" id="hud-glyph">剑</div><div class="vitals"><div class="hero-line"><b id="hud-name"></b><span id="hp-label"></span></div><div class="hp-track"><i id="hp-fill"></i><i id="shield-fill"></i></div><div class="hero-sub"><span id="hud-title"></span><span id="dash-label">轻功 ● ●</span></div></div></div>
+    <div class="clock"><small id="phase">山雨初至</small><strong id="timer">00:00</strong><div class="timeline"><i id="time-fill"></i></div></div>
+    <div class="right-hud"><div><span>破敌</span><b id="kills">0</b></div><button id="pause" class="icon-btn" aria-label="暂停游戏">Ⅱ</button></div>
+    <div id="boss-hud" class="hidden"><div><span>山庄执伞人</span><b id="boss-name">黑伞客</b><small id="boss-hp-text"></small></div><div class="boss-track"><i id="boss-fill"></i></div></div>
+    <div id="toast" role="status"></div><div id="world-caption">听雨山庄 <span>竹影庭</span></div>
+    <div class="bottom-hud"><div class="skills-head"><span id="level">境界 一</span><span id="fusion-status">武学未成 · 按 B 查阅秘籍</span></div><div id="skillbar"></div><div class="xp-track"><i id="xp-fill"></i></div><div class="controls-hint"><span>WASD 移动</span><span>空格 轻功</span><span>Q 绝技</span><span>B 秘籍</span><span>ESC 暂停</span></div></div>
+    <div class="map-wrap"><canvas id="map" width="144" height="144" aria-label="小地图"></canvas><span>听雨庄图</span></div>
+    <div id="touch-controls"><div id="stick"><i></i></div><button id="touch-dash">轻功</button><button id="touch-ult">绝技</button></div>
+  </section>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div id="modal-content"></div></div>
+  <div id="damage-flash" aria-hidden="true"></div>
+  <div id="fatal" class="hidden"></div>
+  <script>/* THREE */</script>
+  <script>/* GAME */</script>
+</body>
+</html>
