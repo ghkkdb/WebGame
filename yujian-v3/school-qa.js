@@ -7,7 +7,7 @@ function checkSchoolCombat(check){
  const pixels=actorSprite(0,0).getContext('2d').getImageData(0,0,actorSprite(0,0).width,actorSprite(0,0).height).data;let hardAlpha=true;for(let i=3;i<pixels.length;i+=4)if(pixels[i]!==0&&pixels[i]!==255){hardAlpha=false;break;}check('人物边缘无半透明模糊晕边',hardAlpha);
  const kinds=['swordqi','dart','butterfly'];
  for(let i=0;i<3;i++){
-  startGame(i);game.player.invuln=999;const target=spawnEnemy('shield',{x:6,z:5}),hp=target.hp;autoAttack();
+  startGame(i);game.player.invuln=999;const target=spawnEnemy('shield',{x:6,z:5}),hp=target.hp;autoAttack();for(let n=0;n<3;n++)updateGame(.04);
   check(HEROS[i].sect+'普通攻击使用专属投射物',projectiles.length>0&&projectiles.every(b=>b.kind===kinds[i]));
   check(HEROS[i].sect+'伤害随投射物飞行判定',target.hp===hp);
   for(let n=0;n<35&&state==='playing';n++)updateGame(.04);
